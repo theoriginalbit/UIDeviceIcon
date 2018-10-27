@@ -1,0 +1,16 @@
+PODS:
+  - UIDeviceIcon (0.1.0)
+
+DEPENDENCIES:
+  - UIDeviceIcon (from `../`)
+
+EXTERNAL SOURCES:
+  UIDeviceIcon:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIDeviceIcon: 7491ae89b95b511f23d0f8026f5aeb3f1b837e79
+
+PODFILE CHECKSUM: 2e3f53359834de3b8bd9c1215259ad74fab91d53
+
+COCOAPODS: 1.5.3

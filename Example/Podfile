@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UIDeviceIcon_Example' do
+  pod 'UIDeviceIcon', :path => '../'
+
+  target 'UIDeviceIcon_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
