@@ -1,5 +1,5 @@
 # UIDeviceIcon
-[![CI Status](https://img.shields.io/travis/theoriginalbit/UIDeviceIcon.svg?style=flat)](https://travis-ci.org/theoriginalbit/UIDeviceIcon)
+[![CI Status](https://img.shields.io/travis/theoriginalbit/UIDeviceIcon.svg?style=flat)](https://travis-ci.com/theoriginalbit/UIDeviceIcon)
 [![Version](https://img.shields.io/cocoapods/v/UIDeviceIcon.svg?style=flat)](https://cocoapods.org/pods/UIDeviceIcon)
 [![License](https://img.shields.io/cocoapods/l/UIDeviceIcon.svg?style=flat)](https://cocoapods.org/pods/UIDeviceIcon)
 [![Platform](https://img.shields.io/cocoapods/p/UIDeviceIcon.svg?style=flat)](https://cocoapods.org/pods/UIDeviceIcon)
