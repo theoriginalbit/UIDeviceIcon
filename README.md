@@ -11,7 +11,7 @@ A µframework to provide an icon to represent the device model.
 ### CocoaPods
 
 ```ruby
-pod 'UIDeviceIcon', '~> 1.0.0'
+pod 'UIDeviceIcon', '~> 1.0'
 ```
 
 ### Carthage

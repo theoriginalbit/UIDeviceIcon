@@ -1,16 +1,27 @@
 PODS:
-  - UIDeviceIcon (0.1.0)
+  - SVGPath (1.0.0)
+  - UIDeviceIcon (1.0.0):
+    - SVGPath (~> 1.0)
+    - UIDeviceModel (~> 1.0)
+  - UIDeviceModel (1.0.1)
 
 DEPENDENCIES:
   - UIDeviceIcon (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SVGPath
+    - UIDeviceModel
 
 EXTERNAL SOURCES:
   UIDeviceIcon:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIDeviceIcon: 7491ae89b95b511f23d0f8026f5aeb3f1b837e79
+  SVGPath: 369d11028db7c9a91d2f6fd4b6022c162665a232
+  UIDeviceIcon: cc5e42689324650671ef981e86b304243a38e17d
+  UIDeviceModel: b5143a676c2a1b6bfcea9d3e732812436d6d72ec
 
-PODFILE CHECKSUM: 2e3f53359834de3b8bd9c1215259ad74fab91d53
+PODFILE CHECKSUM: 61e61f0e5609d47964ae9d02a5ac82910eec206b
 
 COCOAPODS: 1.5.3
