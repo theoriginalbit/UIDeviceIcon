@@ -88,19 +88,258 @@ extension UIDeviceIcon {
     
     static private var iPadMini = UIBezierPath(svgPath: "M20.737,3.55271368e-15 L1.27,3.55271368e-15 C0.582868556,0.0186499523 0.0290122717,0.569000817 0.006,1.256 L0,29.8 C0.0342241108,30.4753022 0.593843423,31.0040763 1.27,31 L20.737,31 C21.4228541,30.9778764 21.9746107,30.428741 22,29.743 L22,1.256 C21.9770149,0.569375714 21.4237414,0.0191687177 20.737,0 Z M10.944,1.251 C11.181219,1.25210336 11.3727327,1.44510674 11.3719979,1.68232713 C11.3712632,1.91954753 11.1785577,2.11136091 10.9413364,2.11099484 C10.7041152,2.11062876 10.5120026,1.91822153 10.512,1.681 C10.5130985,1.44358401 10.7055821,1.25154704 10.943,1.251 L10.944,1.251 Z M11,30.5 C10.4477153,30.5 10,30.0522847 10,29.5 C10,28.9477153 10.4477153,28.5 11,28.5 C11.5522847,28.5 12,28.9477153 12,29.5 C12,30.0522847 11.5522847,30.5 11,30.5 Z M20,28 L2,28 L2,3 L20,3 L20,28 Z")
     
-    static private var  iPhone5s = UIBezierPath(svgPath: "M14.057,0 L3,0 C1.229,0 0,1.181 0,2.935 L0,32.067 C0,33.82 1.232,35 3,35 L14.057,35 C15.787,35 17,33.801 17,32.067 L17,2.935 C17,1.207 15.821,0 14.057,0 Z M7,2 L10,2 L10.001,2.5 L7.001,2.5 L7,2 Z M8.5,34.5 C7.674,34.5 7,33.827 7,33 C7,32.172 7.674,31.5 8.5,31.5 C9.327,31.5 10,32.172 10,33 C10,33.827 9.328,34.5 8.5,34.5 Z M16,31 L1,31 L1,4 L16,4 L16,31 Z M8.5,32.005 C7.948,32.005 7.5,32.453 7.5,33.005 C7.5,33.556 7.948,34.005 8.5,34.005 C9.051,34.005 9.5,33.556 9.5,33.005 C9.5,32.453 9.052,32.005 8.5,32.005 Z")
+    static private let iPhone5s: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 3, y: 0))
+        device.addLine(to: CGPoint(x: 14.06, y: 0))
+        device.addCurve(to: CGPoint(x: 17, y: 2.94), controlPoint1: CGPoint(x: 15.82, y: 0), controlPoint2: CGPoint(x: 17, y: 1.21))
+        device.addLine(to: CGPoint(x: 17, y: 32.07))
+        device.addCurve(to: CGPoint(x: 14.06, y: 35), controlPoint1: CGPoint(x: 17, y: 33.8), controlPoint2: CGPoint(x: 15.79, y: 35))
+        device.addLine(to: CGPoint(x: 3, y: 35))
+        device.addCurve(to: CGPoint(x: 0, y: 32.07), controlPoint1: CGPoint(x: 1.23, y: 35), controlPoint2: CGPoint(x: 0, y: 33.82))
+        device.addLine(to: CGPoint(x: 0, y: 2.94))
+        device.addCurve(to: CGPoint(x: 3, y: 0), controlPoint1: CGPoint(x: 0, y: 1.18), controlPoint2: CGPoint(x: 1.23, y: 0))
+        
+        let speaker = UIBezierPath(rect: CGRect(x: 7, y: 2, width: 3, height: 0.5))
+        device.append(speaker.reversing())
+        
+        let home = UIBezierPath(ovalIn: CGRect(x: 7, y: 31.5, width: 3, height: 3))
+        let homeInner = UIBezierPath(ovalIn: CGRect(x: 7.5, y: 32, width: 2, height: 2))
+        home.append(homeInner.reversing())
+        device.append(home.reversing())
+        
+        let screen = UIBezierPath(rect: CGRect(x: 1, y: 4, width: 15, height: 27))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhoneSE = UIBezierPath(svgPath: "M14.06,0 L3,0 C1.23,0 0,1.18 0,2.93 L0,32.06 C0,33.82 1.23,35 3,35 L14.06,35 C15.79,35 17,33.8 17,32.07 L17,2.93 C17,1.21 15.82,0 14.06,0 Z M7,2 L10,2 L10,2.5 L7,2.5 L7,2 Z M8.5,34 C7.95,34 7.5,33.55 7.5,33 C7.5,32.45 7.95,32 8.5,32 C9.05,32 9.5,32.45 9.5,33 C9.5,33.55 9.05,34 8.5,34 Z M16,31 L1,31 L1,4 L16,4 L16,31 Z")
+    static private let iPhoneSE: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 3, y: 0))
+        device.addLine(to: CGPoint(x: 14.06, y: 0))
+        device.addCurve(to: CGPoint(x: 17, y: 2.93), controlPoint1: CGPoint(x: 15.82, y: 0), controlPoint2: CGPoint(x: 17, y: 1.21))
+        device.addLine(to: CGPoint(x: 17, y: 32.07))
+        device.addCurve(to: CGPoint(x: 14.06, y: 35), controlPoint1: CGPoint(x: 17, y: 33.8), controlPoint2: CGPoint(x: 15.79, y: 35))
+        device.addLine(to: CGPoint(x: 3, y: 35))
+        device.addCurve(to: CGPoint(x: 0, y: 32.06), controlPoint1: CGPoint(x: 1.23, y: 35), controlPoint2: CGPoint(x: 0, y: 33.82))
+        device.addLine(to: CGPoint(x: 0, y: 2.93))
+        device.addCurve(to: CGPoint(x: 3, y: 0), controlPoint1: CGPoint(x: 0, y: 1.18), controlPoint2: CGPoint(x: 1.23, y: 0))
+        
+        let speaker = UIBezierPath(rect: CGRect(x: 7, y: 2, width: 3, height: 0.5))
+        device.append(speaker.reversing())
+        
+        let home = UIBezierPath(ovalIn: CGRect(x: 7.5, y: 32, width: 2, height: 2))
+        device.append(home.reversing())
+        
+        let screen = UIBezierPath(rect: CGRect(x: 1, y: 4, width: 15, height: 27))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhone6 = UIBezierPath(svgPath: "M16.1094091,0 L2.87331818,0 C1.2825,0 0,1.27511111 0,2.83142222 L0,35.1542222 C0,36.7130667 1.2825,38 2.87331818,38 L16.1094091,38 C17.6985,38 19,36.7130667 19,35.1542222 L19,2.83142222 C19,1.27511111 17.6985,0 16.1094091,0 Z M8.20454545,2.11195556 L10.7954545,2.11195556 L10.7954545,2.53417778 L8.20454545,2.53417778 L8.20454545,2.11195556 Z M9.50086364,37.3666667 C8.66659091,37.3666667 7.98863636,36.7046222 7.98863636,35.8888889 C7.98863636,35.0731556 8.66659091,34.4111111 9.50086364,34.4111111 C10.3342727,34.4111111 11.0113636,35.0731556 11.0113636,35.8888889 C11.0113636,36.7046222 10.3342727,37.3666667 9.50086364,37.3666667 Z M18.1363636,33.7777778 L0.863636364,33.7777778 L0.863636364,4.22222222 L18.1363636,4.22222222 L18.1363636,33.7777778 Z M9.5,36.7333333 C9.02413636,36.7333333 8.63636364,36.3533333 8.63636364,35.8880444 C8.63636364,35.4227556 9.02413636,35.0444444 9.5,35.0444444 C9.97586364,35.0444444 10.3636364,35.4227556 10.3636364,35.8880444 C10.3636364,36.3533333 9.97586364,36.7333333 9.5,36.7333333 Z")
+    static private let iPhone6: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 2.87, y: 0))
+        device.addLine(to: CGPoint(x: 16.11, y: 0))
+        device.addCurve(to: CGPoint(x: 19, y: 2.83), controlPoint1: CGPoint(x: 17.7, y: 0), controlPoint2: CGPoint(x: 19, y: 1.28))
+        device.addLine(to: CGPoint(x: 19, y: 35.15))
+        device.addCurve(to: CGPoint(x: 16.11, y: 38), controlPoint1: CGPoint(x: 19, y: 36.71), controlPoint2: CGPoint(x: 17.7, y: 38))
+        device.addLine(to: CGPoint(x: 2.87, y: 38))
+        device.addCurve(to: CGPoint(x: 0, y: 35.15), controlPoint1: CGPoint(x: 1.28, y: 38), controlPoint2: CGPoint(x: 0, y: 36.71))
+        device.addLine(to: CGPoint(x: 0, y: 2.83))
+        device.addCurve(to: CGPoint(x: 2.87, y: 0), controlPoint1: CGPoint(x: 0, y: 1.28), controlPoint2: CGPoint(x: 1.28, y: 0))
+        
+        let speaker = UIBezierPath(rect: CGRect(x: 8.2, y: 2.11, width: 2.6, height: 0.42))
+        device.append(speaker.reversing())
+        
+        let home = UIBezierPath(ovalIn: CGRect(x: 7.99, y: 34.41, width: 3.02, height: 2.96))
+        let homeInner = UIBezierPath(ovalIn: CGRect(x: 8.64, y: 35.04, width: 1.73, height: 1.69))
+        home.append(homeInner.reversing())
+        device.append(home.reversing())
+        
+        let screen = UIBezierPath(rect: CGRect(x: 0.86, y: 4.22, width: 17.27, height: 29.56))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhone6Plus = UIBezierPath(svgPath: "M18.653,0 L3.327,0 C1.485,0 0,1.51 0,3.353 L0,41.63 C0,43.476 1.485,45 3.327,45 L18.653,45 C20.493,45 22,43.476 22,41.63 L22,3.353 C22,1.51 20.493,0 18.653,0 Z M9.5,2.501 L12.5,2.501 L12.5,3.001 L9.5,3.001 L9.5,2.501 Z M11.001,44.25 C10.035,44.25 9.25,43.466 9.25,42.5 C9.25,41.534 10.035,40.75 11.001,40.75 C11.966,40.75 12.75,41.534 12.75,42.5 C12.75,43.466 11.966,44.25 11.001,44.25 Z M21,40 L1,40 L1,5 L21,5 L21,40 Z M11,43.5 C10.449,43.5 10,43.05 10,42.499 C10,41.948 10.449,41.5 11,41.5 C11.551,41.5 12,41.948 12,42.499 C12,43.05 11.551,43.5 11,43.5 Z")
+    static private let iPhone6Plus: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 3.33, y: 0))
+        device.addLine(to: CGPoint(x: 18.65, y: 0))
+        device.addCurve(to: CGPoint(x: 22, y: 3.35), controlPoint1: CGPoint(x: 20.49, y: 0), controlPoint2: CGPoint(x: 22, y: 1.51))
+        device.addLine(to: CGPoint(x: 22, y: 41.63))
+        device.addCurve(to: CGPoint(x: 18.65, y: 45), controlPoint1: CGPoint(x: 22, y: 43.48), controlPoint2: CGPoint(x: 20.49, y: 45))
+        device.addLine(to: CGPoint(x: 3.33, y: 45))
+        device.addCurve(to: CGPoint(x: 0, y: 41.63), controlPoint1: CGPoint(x: 1.48, y: 45), controlPoint2: CGPoint(x: 0, y: 43.48))
+        device.addLine(to: CGPoint(x: 0, y: 3.35))
+        device.addCurve(to: CGPoint(x: 3.33, y: 0), controlPoint1: CGPoint(x: 0, y: 1.51), controlPoint2: CGPoint(x: 1.48, y: 0))
+        
+        let speaker = UIBezierPath(rect: CGRect(x: 9.5, y: 2.5, width: 3, height: 0.5))
+        device.append(speaker.reversing())
+        
+        let home = UIBezierPath(ovalIn: CGRect(x: 9.25, y: 40.75, width: 3.5, height: 3.5))
+        let homeInner = UIBezierPath(ovalIn: CGRect(x: 10, y: 41.5, width: 2, height: 2))
+        home.append(homeInner.reversing())
+        device.append(home.reversing())
+        
+        let screen = UIBezierPath(rect: CGRect(x: 1, y: 5, width: 20, height: 35))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhoneX = UIBezierPath(svgPath: "M17,41 C18.64,41 20,39.66 20,38.01 L20,14.14 L20,9.4 L20,2.99 C20,1.35 18.66,0 17.01,0 L2.99,0 C1.34,1.77635684e-15 0,1.34 0,2.99 L0,5.46 L0,15.12 L0,38.01 C0,39.66 1.36,41 3,41 L17,41 Z M12.6,1.3 C12.81,1.3 12.98,1.47 12.98,1.68 C12.98,1.89 12.81,2.06 12.6,2.06 C12.39,2.06 12.22,1.89 12.22,1.68 C12.22,1.47 12.39,1.3 12.6,1.3 Z M8.28,1.67 C8.28,1.63 8.29,1.49 8.47,1.49 L11.21,1.49 C11.39,1.49 11.4,1.63 11.4,1.67 L11.4,1.7 C11.4,1.74 11.39,1.88 11.21,1.88 L8.47,1.88 C8.29,1.88 8.28,1.74 8.28,1.7 L8.28,1.67 Z M13.98,3 C14.71,3 14.94,2.56 15,2.17 C15.01,2.11 15,1.39 15,1.36 C15.03,1.11 15.29,1.02 15.44,1 L17.2,1 C18.19,1 19,1.81 19,2.8 L19,38.2 C19,39.19 18.19,40 17.2,40 L2.8,40 C1.81,40 1,39.19 1,38.2 L1,2.8 C1,1.81 1.81,1 2.8,1 L4.56,1 C4.71,1.02 4.97,1.11 5,1.36 C5,1.38 4.99,2.11 5,2.17 C5.07,2.56 5.3,3 6.02,3 L13.98,3 Z")
+    static private let iPhoneX: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 2.99, y: 0))
+        device.addLine(to: CGPoint(x: 17.01, y: 0))
+        device.addCurve(to: CGPoint(x: 20, y: 2.99), controlPoint1: CGPoint(x: 18.66, y: 0), controlPoint2: CGPoint(x: 20, y: 1.35))
+        device.addLine(to: CGPoint(x: 20, y: 38.01))
+        device.addCurve(to: CGPoint(x: 17, y: 41), controlPoint1: CGPoint(x: 20, y: 39.66), controlPoint2: CGPoint(x: 18.64, y: 41))
+        device.addLine(to: CGPoint(x: 3, y: 41))
+        device.addCurve(to: CGPoint(x: 0, y: 38.01), controlPoint1: CGPoint(x: 1.36, y: 41), controlPoint2: CGPoint(x: 0, y: 39.66))
+        device.addLine(to: CGPoint(x: 0, y: 2.99))
+        device.addCurve(to: CGPoint(x: 2.99, y: 0), controlPoint1: CGPoint(x: 0, y: 1.34), controlPoint2: CGPoint(x: 1.34, y: 0))
+        
+        let camera = UIBezierPath(ovalIn: CGRect(x: 12.22, y: 1.3, width: 0.76, height: 0.76))
+        device.append(camera.reversing())
+        
+        let speaker = UIBezierPath()
+        speaker.move(to: CGPoint(x: 8.47, y: 1.49))
+        speaker.addLine(to: CGPoint(x: 11.21, y: 1.49))
+        speaker.addCurve(to: CGPoint(x: 11.4, y: 1.67), controlPoint1: CGPoint(x: 11.39, y: 1.49), controlPoint2: CGPoint(x: 11.4, y: 1.63))
+        speaker.addLine(to: CGPoint(x: 11.4, y: 1.7))
+        speaker.addCurve(to: CGPoint(x: 11.21, y: 1.88), controlPoint1: CGPoint(x: 11.4, y: 1.74), controlPoint2: CGPoint(x: 11.39, y: 1.88))
+        speaker.addLine(to: CGPoint(x: 8.47, y: 1.88))
+        speaker.addCurve(to: CGPoint(x: 8.28, y: 1.7), controlPoint1: CGPoint(x: 8.29, y: 1.88), controlPoint2: CGPoint(x: 8.28, y: 1.74))
+        speaker.addLine(to: CGPoint(x: 8.28, y: 1.67))
+        speaker.addCurve(to: CGPoint(x: 8.47, y: 1.49), controlPoint1: CGPoint(x: 8.28, y: 1.63), controlPoint2: CGPoint(x: 8.29, y: 1.49))
+        device.append(speaker.reversing())
+        
+        let screen = UIBezierPath()
+        screen.move(to: CGPoint(x: 2.8, y: 1))
+        screen.addLine(to: CGPoint(x: 4.56, y: 1))
+        screen.addCurve(to: CGPoint(x: 5, y: 1.36), controlPoint1: CGPoint(x: 4.71, y: 1.02), controlPoint2: CGPoint(x: 4.97, y: 1.11))
+        screen.addCurve(to: CGPoint(x: 5, y: 2.17), controlPoint1: CGPoint(x: 5, y: 1.38), controlPoint2: CGPoint(x: 4.99, y: 2.11))
+        screen.addCurve(to: CGPoint(x: 6.02, y: 3), controlPoint1: CGPoint(x: 5.07, y: 2.56), controlPoint2: CGPoint(x: 5.3, y: 3))
+        screen.addLine(to: CGPoint(x: 13.98, y: 3))
+        screen.addCurve(to: CGPoint(x: 15, y: 2.17), controlPoint1: CGPoint(x: 14.71, y: 3), controlPoint2: CGPoint(x: 14.94, y: 2.56))
+        screen.addCurve(to: CGPoint(x: 15, y: 1.36), controlPoint1: CGPoint(x: 15.01, y: 2.11), controlPoint2: CGPoint(x: 15, y: 1.39))
+        screen.addCurve(to: CGPoint(x: 15.44, y: 1), controlPoint1: CGPoint(x: 15.03, y: 1.11), controlPoint2: CGPoint(x: 15.29, y: 1.02))
+        screen.addLine(to: CGPoint(x: 17.2, y: 1))
+        screen.addCurve(to: CGPoint(x: 19, y: 2.8), controlPoint1: CGPoint(x: 18.19, y: 1), controlPoint2: CGPoint(x: 19, y: 1.81))
+        screen.addLine(to: CGPoint(x: 19, y: 38.2))
+        screen.addCurve(to: CGPoint(x: 17.2, y: 40), controlPoint1: CGPoint(x: 19, y: 39.19), controlPoint2: CGPoint(x: 18.19, y: 40))
+        screen.addLine(to: CGPoint(x: 2.8, y: 40))
+        screen.addCurve(to: CGPoint(x: 1, y: 38.2), controlPoint1: CGPoint(x: 1.81, y: 40), controlPoint2: CGPoint(x: 1, y: 39.19))
+        screen.addLine(to: CGPoint(x: 1, y: 2.8))
+        screen.addCurve(to: CGPoint(x: 2.8, y: 1), controlPoint1: CGPoint(x: 1, y: 1.81), controlPoint2: CGPoint(x: 1.81, y: 1))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhoneXR = UIBezierPath(svgPath: "M17.82,0 L3.18,0 C1.42601349,0.00548982593 0.00548982593,1.42601349 0,3.18 L0,40.82 C0.010964266,42.5756029 1.43437137,43.9945479 3.19,44 L17.81,44 C19.5656286,43.9945479 20.9890357,42.5756029 21,40.82 L21,3.18 C20.9945102,1.42601349 19.5739865,0.00548982593 17.82,2.66453526e-15 Z M13.5,1.13 C13.6545407,1.12593174 13.7961419,1.21589189 13.8581224,1.35751745 C13.9201028,1.49914302 13.8901065,1.66420042 13.782259,1.77496274 C13.6744115,1.88572506 13.5102125,1.92011142 13.3669848,1.86192899 C13.2237571,1.80374656 13.1300535,1.66459423 13.13,1.51 C13.1273003,1.41014894 13.1650873,1.31344835 13.2347705,1.2418818 C13.3044537,1.17031525 13.4001125,1.12996351 13.5,1.13 Z M9,1.25 L12,1.25 C12.1380712,1.25 12.25,1.36192881 12.25,1.5 C12.25,1.63807119 12.1380712,1.75 12,1.75 L9,1.75 C8.86192881,1.75 8.75,1.63807119 8.75,1.5 C8.75,1.36192881 8.86192881,1.25 9,1.25 Z M20,41.08 C20,41.5892157 19.7977149,42.0775752 19.437645,42.437645 C19.0775752,42.7977149 18.5892157,43 18.08,43 L2.92,43 C1.85961328,43 1,42.1403867 1,41.08 L1,3 C0.999140416,1.92593292 1.84679216,1.04296235 2.92,1 L4.55,1 C4.7,1 5,1 5,1.26 C5,1.26 5,2.05 5,2.11 C5.0527177,2.65939027 5.54055989,3.06219575 6.09,3.01 L14.92,3.01 C15.4587188,3.05692564 15.9371489,2.66709372 16,2.13 C16,2.07 16,1.28 16,1.26 C16,0.99 16.32,1.03 16.47,1 L18.08,1 C19.1532078,1.04296235 20.0008596,1.92593292 20,3 L20,41.08 Z")
+    static private let iPhoneXR: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 3.18, y: 0))
+        device.addLine(to: CGPoint(x: 17.82, y: 0))
+        device.addCurve(to: CGPoint(x: 21, y: 3.18), controlPoint1: CGPoint(x: 19.57, y: 0.01), controlPoint2: CGPoint(x: 20.99, y: 1.43))
+        device.addLine(to: CGPoint(x: 21, y: 40.82))
+        device.addCurve(to: CGPoint(x: 17.81, y: 44), controlPoint1: CGPoint(x: 20.99, y: 42.58), controlPoint2: CGPoint(x: 19.57, y: 43.99))
+        device.addLine(to: CGPoint(x: 3.19, y: 44))
+        device.addCurve(to: CGPoint(x: 0, y: 40.82), controlPoint1: CGPoint(x: 1.43, y: 43.99), controlPoint2: CGPoint(x: 0.01, y: 42.58))
+        device.addLine(to: CGPoint(x: 0, y: 3.18))
+        device.addCurve(to: CGPoint(x: 3.18, y: 0), controlPoint1: CGPoint(x: 0.01, y: 1.43), controlPoint2: CGPoint(x: 1.43, y: 0.01))
+        
+        let camera = UIBezierPath(ovalIn: CGRect(x: 13.13, y: 1.13, width: 0.76, height: 0.76))
+        device.append(camera.reversing())
+        
+        let speaker = UIBezierPath()
+        speaker.move(to: CGPoint(x: 9, y: 1.25))
+        speaker.addLine(to: CGPoint(x: 12, y: 1.25))
+        speaker.addCurve(to: CGPoint(x: 12.25, y: 1.5), controlPoint1: CGPoint(x: 12.14, y: 1.25), controlPoint2: CGPoint(x: 12.25, y: 1.36))
+        speaker.addCurve(to: CGPoint(x: 12, y: 1.75), controlPoint1: CGPoint(x: 12.25, y: 1.64), controlPoint2: CGPoint(x: 12.14, y: 1.75))
+        speaker.addLine(to: CGPoint(x: 9, y: 1.75))
+        speaker.addCurve(to: CGPoint(x: 8.75, y: 1.5), controlPoint1: CGPoint(x: 8.86, y: 1.75), controlPoint2: CGPoint(x: 8.75, y: 1.64))
+        speaker.addCurve(to: CGPoint(x: 9, y: 1.25), controlPoint1: CGPoint(x: 8.75, y: 1.36), controlPoint2: CGPoint(x: 8.86, y: 1.25))
+        device.append(speaker.reversing())
+        
+        let screen = UIBezierPath()
+        screen.move(to: CGPoint(x: 2.92, y: 1))
+        screen.addLine(to: CGPoint(x: 4.55, y: 1))
+        screen.addCurve(to: CGPoint(x: 5, y: 1.26), controlPoint1: CGPoint(x: 4.7, y: 1), controlPoint2: CGPoint(x: 5, y: 1))
+        screen.addCurve(to: CGPoint(x: 5, y: 2.11), controlPoint1: CGPoint(x: 5, y: 1.26), controlPoint2: CGPoint(x: 5, y: 2.05))
+        screen.addCurve(to: CGPoint(x: 6.09, y: 3.01), controlPoint1: CGPoint(x: 5.05, y: 2.66), controlPoint2: CGPoint(x: 5.54, y: 3.06))
+        screen.addLine(to: CGPoint(x: 14.92, y: 3.01))
+        screen.addCurve(to: CGPoint(x: 16, y: 2.13), controlPoint1: CGPoint(x: 15.46, y: 3.06), controlPoint2: CGPoint(x: 15.94, y: 2.67))
+        screen.addCurve(to: CGPoint(x: 16, y: 1.26), controlPoint1: CGPoint(x: 16, y: 2.07), controlPoint2: CGPoint(x: 16, y: 1.28))
+        screen.addCurve(to: CGPoint(x: 16.47, y: 1), controlPoint1: CGPoint(x: 16, y: 0.99), controlPoint2: CGPoint(x: 16.32, y: 1.03))
+        screen.addLine(to: CGPoint(x: 18.08, y: 1))
+        screen.addCurve(to: CGPoint(x: 20, y: 3), controlPoint1: CGPoint(x: 19.15, y: 1.04), controlPoint2: CGPoint(x: 20, y: 1.93))
+        screen.addLine(to: CGPoint(x: 20, y: 41.08))
+        screen.addCurve(to: CGPoint(x: 19.44, y: 42.44), controlPoint1: CGPoint(x: 20, y: 41.59), controlPoint2: CGPoint(x: 19.8, y: 42.08))
+        screen.addCurve(to: CGPoint(x: 18.08, y: 43), controlPoint1: CGPoint(x: 19.08, y: 42.8), controlPoint2: CGPoint(x: 18.59, y: 43))
+        screen.addLine(to: CGPoint(x: 2.92, y: 43))
+        screen.addCurve(to: CGPoint(x: 1, y: 41.08), controlPoint1: CGPoint(x: 1.86, y: 43), controlPoint2: CGPoint(x: 1, y: 42.14))
+        screen.addLine(to: CGPoint(x: 1, y: 3))
+        screen.addCurve(to: CGPoint(x: 2.92, y: 1), controlPoint1: CGPoint(x: 1, y: 1.93), controlPoint2: CGPoint(x: 1.85, y: 1.04))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
-    static private var iPhoneXSMax = UIBezierPath(svgPath: "M18.66,0 L3.34,0 C1.49764834,0.00549139768 0.00549139768,1.49764834 0,3.34 L0,42.66 C0.0109993702,44.5078615 1.51210575,46.0000327 3.36,46 L18.64,46 C20.4878943,46.0000327 21.9890006,44.5078615 22,42.66 L22,3.34 C21.9945086,1.49764834 20.5023517,0.00549139768 18.66,0 Z M13.5,1.13 C13.6545407,1.12593174 13.7961419,1.21589189 13.8581224,1.35751745 C13.9201028,1.49914302 13.8901065,1.66420042 13.782259,1.77496274 C13.6744115,1.88572506 13.5102125,1.92011142 13.3669848,1.86192899 C13.2237571,1.80374656 13.1300535,1.66459423 13.13,1.51 C13.1273003,1.41014894 13.1650873,1.31344835 13.2347705,1.2418818 C13.3044537,1.17031525 13.4001125,1.12996351 13.5,1.13 Z M9.25,1.47 C9.25,1.3540202 9.3440202,1.26 9.46,1.26 L12.53,1.26 C12.6459798,1.26 12.74,1.3540202 12.74,1.47 L12.74,1.54 C12.74,1.6559798 12.6459798,1.75 12.53,1.75 L9.46,1.75 C9.3440202,1.75 9.25,1.6559798 9.25,1.54 L9.25,1.47 Z M21,43 C21,44.1045695 20.1045695,45 19,45 L3,45 C1.8954305,45 1,44.1045695 1,43 L1,3 C1,1.8954305 1.8954305,1 3,1 L4.5,1 C4.66,1 4.96,1.14 4.99,1.42 C4.99,1.42 4.99,2.01 4.99,2.07 C5.00611996,2.35307653 5.14165002,2.61600324 5.36286759,2.79335871 C5.58408516,2.97071417 5.87019236,3.04582423 6.15,3 L15.86,3 C16.1366889,3.03963367 16.4173372,2.96165673 16.6339221,2.78496903 C16.850507,2.60828133 16.9832583,2.34901127 17,2.07 C17,2.01 17,1.43 17,1.4 C17,1.12 17.33,1.02 17.49,1 L19,1 C20.1045695,1 21,1.8954305 21,3 L21,43 Z")
+    static private let iPhoneXSMax: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 3.34, y: 0))
+        device.addLine(to: CGPoint(x: 18.66, y: 0))
+        device.addCurve(to: CGPoint(x: 22, y: 3.34), controlPoint1: CGPoint(x: 20.5, y: 0.01), controlPoint2: CGPoint(x: 21.99, y: 1.5))
+        device.addLine(to: CGPoint(x: 22, y: 42.66))
+        device.addCurve(to: CGPoint(x: 18.64, y: 46), controlPoint1: CGPoint(x: 21.99, y: 44.51), controlPoint2: CGPoint(x: 20.49, y: 46))
+        device.addLine(to: CGPoint(x: 3.36, y: 46))
+        device.addCurve(to: CGPoint(x: 0, y: 42.66), controlPoint1: CGPoint(x: 1.51, y: 46), controlPoint2: CGPoint(x: 0.01, y: 44.51))
+        device.addLine(to: CGPoint(x: 0, y: 3.34))
+        device.addCurve(to: CGPoint(x: 3.34, y: 0), controlPoint1: CGPoint(x: 0.01, y: 1.5), controlPoint2: CGPoint(x: 1.5, y: 0.01))
+        
+        let camera = UIBezierPath(ovalIn: CGRect(x: 13.13, y: 1.13, width: 0.76, height: 0.76))
+        device.append(camera.reversing())
+        
+        let speaker = UIBezierPath()
+        speaker.move(to: CGPoint(x: 9.46, y: 1.26))
+        speaker.addLine(to: CGPoint(x: 12.53, y: 1.26))
+        speaker.addCurve(to: CGPoint(x: 12.74, y: 1.47), controlPoint1: CGPoint(x: 12.65, y: 1.26), controlPoint2: CGPoint(x: 12.74, y: 1.35))
+        speaker.addLine(to: CGPoint(x: 12.74, y: 1.54))
+        speaker.addCurve(to: CGPoint(x: 12.53, y: 1.75), controlPoint1: CGPoint(x: 12.74, y: 1.66), controlPoint2: CGPoint(x: 12.65, y: 1.75))
+        speaker.addLine(to: CGPoint(x: 9.46, y: 1.75))
+        speaker.addCurve(to: CGPoint(x: 9.25, y: 1.54), controlPoint1: CGPoint(x: 9.34, y: 1.75), controlPoint2: CGPoint(x: 9.25, y: 1.66))
+        speaker.addLine(to: CGPoint(x: 9.25, y: 1.47))
+        speaker.addCurve(to: CGPoint(x: 9.46, y: 1.26), controlPoint1: CGPoint(x: 9.25, y: 1.35), controlPoint2: CGPoint(x: 9.34, y: 1.26))
+        device.append(speaker.reversing())
+        
+        let screen = UIBezierPath()
+        screen.move(to: CGPoint(x: 3, y: 1))
+        screen.addLine(to: CGPoint(x: 4.5, y: 1))
+        screen.addCurve(to: CGPoint(x: 4.99, y: 1.42), controlPoint1: CGPoint(x: 4.66, y: 1), controlPoint2: CGPoint(x: 4.96, y: 1.14))
+        screen.addCurve(to: CGPoint(x: 4.99, y: 2.07), controlPoint1: CGPoint(x: 4.99, y: 2.07), controlPoint2: CGPoint(x: 4.99, y: 2.01))
+        screen.addCurve(to: CGPoint(x: 5.36, y: 2.79), controlPoint1: CGPoint(x: 5.01, y: 2.35), controlPoint2: CGPoint(x: 5.14, y: 2.62))
+        screen.addCurve(to: CGPoint(x: 6.15, y: 3), controlPoint1: CGPoint(x: 5.58, y: 2.97), controlPoint2: CGPoint(x: 5.87, y: 3.05))
+        screen.addLine(to: CGPoint(x: 15.86, y: 3))
+        screen.addCurve(to: CGPoint(x: 16.63, y: 2.78), controlPoint1: CGPoint(x: 16.14, y: 3.04), controlPoint2: CGPoint(x: 16.42, y: 2.96))
+        screen.addCurve(to: CGPoint(x: 17, y: 2.07), controlPoint1: CGPoint(x: 16.85, y: 2.61), controlPoint2: CGPoint(x: 16.98, y: 2.35))
+        screen.addCurve(to: CGPoint(x: 17, y: 1.4), controlPoint1: CGPoint(x: 17, y: 2.01), controlPoint2: CGPoint(x: 17, y: 1.43))
+        screen.addCurve(to: CGPoint(x: 17.49, y: 1), controlPoint1: CGPoint(x: 17, y: 1.12), controlPoint2: CGPoint(x: 17.33, y: 1.02))
+        screen.addLine(to: CGPoint(x: 19, y: 1))
+        screen.addCurve(to: CGPoint(x: 21, y: 3), controlPoint1: CGPoint(x: 20.1, y: 1), controlPoint2: CGPoint(x: 21, y: 1.9))
+        screen.addLine(to: CGPoint(x: 21, y: 43))
+        screen.addCurve(to: CGPoint(x: 19, y: 45), controlPoint1: CGPoint(x: 21, y: 44.1), controlPoint2: CGPoint(x: 20.1, y: 45))
+        screen.addLine(to: CGPoint(x: 3, y: 45))
+        screen.addCurve(to: CGPoint(x: 1, y: 43), controlPoint1: CGPoint(x: 1.9, y: 45), controlPoint2: CGPoint(x: 1, y: 44.1))
+        screen.addLine(to: CGPoint(x: 1, y: 3))
+        screen.addCurve(to: CGPoint(x: 3, y: 1), controlPoint1: CGPoint(x: 1, y: 1.9), controlPoint2: CGPoint(x: 1.9, y: 1))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
     static private var iPodTouch = UIBezierPath(svgPath: "M14.0623862,0.0059107944 L3.00238619,0.0059107944 C2.2043014,-0.0458134525 1.42178873,0.243767185 0.849637895,0.802567831 C0.277487063,1.36136848 -0.0304844705,2.13682741 0.00238618911,2.93591079 L0.00238618911,32.0759108 C-0.0304844705,32.8749942 0.277487063,33.6504531 0.849637895,34.2092538 C1.42178873,34.7680544 2.2043014,35.057635 3.00238619,35.0059108 L14.0623862,35.0059108 C14.8512075,35.0432036 15.6193132,34.7468498 16.1786676,34.189398 C16.738022,33.6319461 17.0369912,32.8648546 17.0023862,32.0759108 L17.0023862,2.93591079 C17.0401326,2.14609733 16.7421732,1.37714452 16.1821016,0.818977948 C15.62203,0.260811371 14.8520665,-0.0345264181 14.0623862,0.0059107944 Z M8.52238619,33.0059108 C7.97010144,33.0059108 7.52238619,32.5581955 7.52238619,32.0059108 C7.52238619,31.453626 7.97010144,31.0059108 8.52238619,31.0059108 C9.07467094,31.0059108 9.52238619,31.453626 9.52238619,32.0059108 C9.52238619,32.5581955 9.07467094,33.0059108 8.52238619,33.0059108 Z M16.0023862,30.0059108 L1.00238619,30.0059108 L1.00238619,5.00591079 L16.0023862,5.00591079 L16.0023862,30.0059108 Z M9.00238619,2.51591079 C9.00238619,2.79205317 8.77852856,3.01591079 8.50238619,3.01591079 C8.22624381,3.01591079 8.00238619,2.79205317 8.00238619,2.51591079 C8.00238619,2.23976842 8.22624381,2.01591079 8.50238619,2.01591079 C8.77852856,2.01591079 9.00238619,2.23976842 9.00238619,2.51591079 Z")
     
