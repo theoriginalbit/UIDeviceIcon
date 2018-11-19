@@ -237,7 +237,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UIDeviceIcon_Example/Pods-UIDeviceIcon_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SVGPath/SVGPath.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceIcon/UIDeviceIcon.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceModel/UIDeviceModel.framework",
 			);
@@ -245,7 +244,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGPath.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDeviceIcon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDeviceModel.framework",
 			);

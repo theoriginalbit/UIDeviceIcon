@@ -8,7 +8,6 @@
 
 import UIKit
 import UIDeviceModel
-import SVGPath
 
 public enum DeviceIconError: Error {
     case unsupportedDevice(UIDeviceModel)

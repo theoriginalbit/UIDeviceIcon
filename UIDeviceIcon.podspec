@@ -16,5 +16,4 @@ Pod::Spec.new do |s|
   s.swift_version           = '4.2'
   
   s.dependency              'UIDeviceModel', '~> 1.0'
-  s.dependency              'SVGPath', '~> 1.0'
 end
