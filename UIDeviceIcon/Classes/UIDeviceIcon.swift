@@ -341,6 +341,31 @@ extension UIDeviceIcon {
         return device
     }()
     
-    static private var iPodTouch = UIBezierPath(svgPath: "M14.0623862,0.0059107944 L3.00238619,0.0059107944 C2.2043014,-0.0458134525 1.42178873,0.243767185 0.849637895,0.802567831 C0.277487063,1.36136848 -0.0304844705,2.13682741 0.00238618911,2.93591079 L0.00238618911,32.0759108 C-0.0304844705,32.8749942 0.277487063,33.6504531 0.849637895,34.2092538 C1.42178873,34.7680544 2.2043014,35.057635 3.00238619,35.0059108 L14.0623862,35.0059108 C14.8512075,35.0432036 15.6193132,34.7468498 16.1786676,34.189398 C16.738022,33.6319461 17.0369912,32.8648546 17.0023862,32.0759108 L17.0023862,2.93591079 C17.0401326,2.14609733 16.7421732,1.37714452 16.1821016,0.818977948 C15.62203,0.260811371 14.8520665,-0.0345264181 14.0623862,0.0059107944 Z M8.52238619,33.0059108 C7.97010144,33.0059108 7.52238619,32.5581955 7.52238619,32.0059108 C7.52238619,31.453626 7.97010144,31.0059108 8.52238619,31.0059108 C9.07467094,31.0059108 9.52238619,31.453626 9.52238619,32.0059108 C9.52238619,32.5581955 9.07467094,33.0059108 8.52238619,33.0059108 Z M16.0023862,30.0059108 L1.00238619,30.0059108 L1.00238619,5.00591079 L16.0023862,5.00591079 L16.0023862,30.0059108 Z M9.00238619,2.51591079 C9.00238619,2.79205317 8.77852856,3.01591079 8.50238619,3.01591079 C8.22624381,3.01591079 8.00238619,2.79205317 8.00238619,2.51591079 C8.00238619,2.23976842 8.22624381,2.01591079 8.50238619,2.01591079 C8.77852856,2.01591079 9.00238619,2.23976842 9.00238619,2.51591079 Z")
+    static private let iPodTouch: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 0, y: 2.94))
+        device.addCurve(to: CGPoint(x: 0.85, y: 0.8), controlPoint1: CGPoint(x: -0.03, y: 2.14), controlPoint2: CGPoint(x: 0.28, y: 1.36))
+        device.addCurve(to: CGPoint(x: 3, y: 0.01), controlPoint1: CGPoint(x: 1.42, y: 0.24), controlPoint2: CGPoint(x: 2.2, y: -0.03))
+        device.addLine(to: CGPoint(x: 14.06, y: 0.01))
+        device.addCurve(to: CGPoint(x: 16.18, y: 0.82), controlPoint1: CGPoint(x: 14.85, y: -0.03), controlPoint2: CGPoint(x: 15.62, y: 0.24))
+        device.addCurve(to: CGPoint(x: 17, y: 2.94), controlPoint1: CGPoint(x: 16.74, y: 1.38), controlPoint2: CGPoint(x: 17.04, y: 2.14))
+        device.addLine(to: CGPoint(x: 17, y: 32.08))
+        device.addCurve(to: CGPoint(x: 16.18, y: 34.19), controlPoint1: CGPoint(x: 17.04, y: 32.86), controlPoint2: CGPoint(x: 16.74, y: 33.63))
+        device.addCurve(to: CGPoint(x: 14.06, y: 35.01), controlPoint1: CGPoint(x: 15.62, y: 34.75), controlPoint2: CGPoint(x: 14.85, y: 35.04))
+        device.addLine(to: CGPoint(x: 3, y: 35.01))
+        device.addCurve(to: CGPoint(x: 0.85, y: 34.21), controlPoint1: CGPoint(x: 2.2, y: 35.06), controlPoint2: CGPoint(x: 1.42, y: 34.77))
+        device.addCurve(to: CGPoint(x: 0, y: 32.08), controlPoint1: CGPoint(x: 0.28, y: 33.65), controlPoint2: CGPoint(x: -0.03, y: 32.87))
+        
+        let camera = UIBezierPath(ovalIn: CGRect(x: 8, y: 2.02, width: 1, height: 1))
+        device.append(camera.reversing())
+        
+        let home = UIBezierPath(ovalIn: CGRect(x: 7.52, y: 31.01, width: 2, height: 2))
+        device.append(home.reversing())
+        
+        let screen = UIBezierPath(rect: CGRect(x: 1, y: 5.01, width: 15, height: 25))
+        device.append(screen.reversing())
+        
+        return device
+    }()
     
 }
