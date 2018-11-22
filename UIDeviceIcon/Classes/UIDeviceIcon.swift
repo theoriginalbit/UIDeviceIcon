@@ -38,8 +38,12 @@ extension UIDeviceIcon {
             path = iPadAir
         case .iPadPro10Inch:
             path = iPadPro10Inch
+        case .iPadPro11Inch:
+            path = iPadPro11Inch
         case .iPadPro12Inch, .iPadPro12Inch2:
             path = iPadPro12Inch
+        case .iPadPro12Inch3:
+            path = iPadPro12Inch3
         case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4:
             path = iPadMini
         case .iPhone5s:
@@ -157,6 +161,35 @@ extension UIDeviceIcon {
         return device
     }()
     
+    static private var iPadPro11Inch: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 1.36, y: 0))
+        device.addLine(to: CGPoint(x: 28.69, y: 0))
+        device.addCurve(to: CGPoint(x: 30, y: 1.51), controlPoint1: CGPoint(x: 29.45, y: 0.08), controlPoint2: CGPoint(x: 30.03, y: 0.74))
+        device.addLine(to: CGPoint(x: 30, y: 41.68))
+        device.addCurve(to: CGPoint(x: 29.62, y: 42.62), controlPoint1: CGPoint(x: 30.01, y: 42.03), controlPoint2: CGPoint(x: 29.87, y: 42.37))
+        device.addCurve(to: CGPoint(x: 28.69, y: 43), controlPoint1: CGPoint(x: 29.38, y: 42.86), controlPoint2: CGPoint(x: 29.04, y: 43))
+        device.addLine(to: CGPoint(x: 1.36, y: 43))
+        device.addCurve(to: CGPoint(x: 0.41, y: 42.62), controlPoint1: CGPoint(x: 1, y: 43.01), controlPoint2: CGPoint(x: 0.66, y: 42.87))
+        device.addCurve(to: CGPoint(x: 0, y: 41.68), controlPoint1: CGPoint(x: 0.15, y: 42.37), controlPoint2: CGPoint(x: 0.01, y: 42.04))
+        device.addLine(to: CGPoint(x: 0, y: 1.51))
+        device.addCurve(to: CGPoint(x: 1.36, y: 0), controlPoint1: CGPoint(x: 0, y: 0.73), controlPoint2: CGPoint(x: 0.59, y: 0.08))
+        
+        let screen = UIBezierPath()
+        screen.move(to: CGPoint(x: 3, y: 2))
+        screen.addLine(to: CGPoint(x: 27, y: 2))
+        screen.addCurve(to: CGPoint(x: 28, y: 3), controlPoint1: CGPoint(x: 27.55, y: 2), controlPoint2: CGPoint(x: 28, y: 2.45))
+        screen.addLine(to: CGPoint(x: 28, y: 40))
+        screen.addCurve(to: CGPoint(x: 27, y: 41), controlPoint1: CGPoint(x: 28, y: 40.55), controlPoint2: CGPoint(x: 27.55, y: 41))
+        screen.addLine(to: CGPoint(x: 3, y: 41))
+        screen.addCurve(to: CGPoint(x: 2, y: 40), controlPoint1: CGPoint(x: 2.45, y: 41), controlPoint2: CGPoint(x: 2, y: 40.55))
+        screen.addLine(to: CGPoint(x: 2, y: 3))
+        screen.addCurve(to: CGPoint(x: 3, y: 2), controlPoint1: CGPoint(x: 2, y: 2.45), controlPoint2: CGPoint(x: 2.45, y: 2))
+        device.append(screen.reversing())
+        
+        return device
+    }()
+    
     static private var iPadPro12Inch: UIBezierPath = {
         let device = UIBezierPath()
         device.move(to: CGPoint(x: 1.49, y: 0))
@@ -176,6 +209,35 @@ extension UIDeviceIcon {
         device.append(home.reversing())
         
         let screen = UIBezierPath(rect: CGRect(x: 2, y: 4, width: 30, height: 39.99))
+        device.append(screen.reversing())
+        
+        return device
+    }()
+    
+    static private var iPadPro12Inch3: UIBezierPath = {
+        let device = UIBezierPath()
+        device.move(to: CGPoint(x: 1.31, y: 0))
+        device.addLine(to: CGPoint(x: 32.69, y: 0))
+        device.addCurve(to: CGPoint(x: 34, y: 1.48), controlPoint1: CGPoint(x: 33.44, y: 0.08), controlPoint2: CGPoint(x: 34.01, y: 0.73))
+        device.addLine(to: CGPoint(x: 34, y: 46.68))
+        device.addCurve(to: CGPoint(x: 33.59, y: 47.62), controlPoint1: CGPoint(x: 34, y: 47.04), controlPoint2: CGPoint(x: 33.85, y: 47.37))
+        device.addCurve(to: CGPoint(x: 32.64, y: 48), controlPoint1: CGPoint(x: 33.34, y: 47.87), controlPoint2: CGPoint(x: 33, y: 48.01))
+        device.addLine(to: CGPoint(x: 1.36, y: 48))
+        device.addCurve(to: CGPoint(x: 0.41, y: 47.62), controlPoint1: CGPoint(x: 1, y: 48.01), controlPoint2: CGPoint(x: 0.66, y: 47.87))
+        device.addCurve(to: CGPoint(x: 0, y: 46.68), controlPoint1: CGPoint(x: 0.15, y: 47.37), controlPoint2: CGPoint(x: 0.01, y: 47.04))
+        device.addLine(to: CGPoint(x: 0, y: 1.48))
+        device.addCurve(to: CGPoint(x: 1.31, y: 0), controlPoint1: CGPoint(x: -0.01, y: 0.73), controlPoint2: CGPoint(x: 0.56, y: 0.08))
+        
+        let screen = UIBezierPath()
+        screen.move(to: CGPoint(x: 3, y: 2))
+        screen.addLine(to: CGPoint(x: 31, y: 2))
+        screen.addCurve(to: CGPoint(x: 32, y: 3), controlPoint1: CGPoint(x: 31.61, y: 2.06), controlPoint2: CGPoint(x: 32, y: 2.48))
+        screen.addLine(to: CGPoint(x: 32, y: 45))
+        screen.addCurve(to: CGPoint(x: 31, y: 46), controlPoint1: CGPoint(x: 32, y: 45.55), controlPoint2: CGPoint(x: 31.55, y: 46))
+        screen.addLine(to: CGPoint(x: 3, y: 46))
+        screen.addCurve(to: CGPoint(x: 2, y: 45), controlPoint1: CGPoint(x: 2.45, y: 46), controlPoint2: CGPoint(x: 2, y: 45.55))
+        screen.addLine(to: CGPoint(x: 2, y: 3))
+        screen.addCurve(to: CGPoint(x: 3, y: 2), controlPoint1: CGPoint(x: 2, y: 2.45), controlPoint2: CGPoint(x: 2.45, y: 2))
         device.append(screen.reversing())
         
         return device
