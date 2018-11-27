@@ -19,14 +19,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahs-uZ-ZeU">
                                 <rect key="frame" x="123.5" y="205.5" width="128" height="256"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="cIt-R4-FSS"/>
                                     <constraint firstAttribute="height" constant="256" id="suJ-EY-0tr"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.44003138289999999" green="0.37661686729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ahs-uZ-ZeU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jg8-xZ-zCF"/>
                             <constraint firstItem="ahs-uZ-ZeU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oPG-fc-eDc"/>
