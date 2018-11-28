@@ -1,5 +1,5 @@
 PODS:
-  - UIDeviceIcon (1.0.1):
+  - UIDeviceIcon (1.2.0):
     - UIDeviceModel (~> 1.1)
   - UIDeviceModel (1.1.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIDeviceIcon: 6c6b3904aced16f658da196d34db2c351d80ed5f
+  UIDeviceIcon: d9fbb2b481c6f12c578567995074aaa36eb2a5bd
   UIDeviceModel: de2dae3735c06e6cb6505bf72c84f99be2de83f8
 
 PODFILE CHECKSUM: 61e61f0e5609d47964ae9d02a5ac82910eec206b
