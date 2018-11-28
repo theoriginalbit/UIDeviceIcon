@@ -35,12 +35,24 @@ let deviceIcon = UIDevice.current.deviceIcon
 
 switch deviceIcon {
 case .deviceIcon(let deviceIcon):
-    break // You have a CAShapeLayer, now do with it as you wish!
+    break // You have a CADeviceLayer (CAShapeLayer), now do with it as you wish!
 case .unknown(let deviceIdentifier):
     break // UIDeviceModel was unable to determine what device this identifier matched
 case .unsupported(let deviceModel):
     break // UIDeviceIcon does not have an SVG path to represent this device model
 }
+```
+
+As of version `1.2` you can specify colours of the screen and speaker, camera, and home button (when available).
+
+```swift
+let deviceIcon: CADeviceLayer = ...
+
+deviceIcon.bezelColor = .white // .fillColor also works
+deviceIcon.screenColor = .red
+deviceIcon.cameraColor = .green
+deviceIcon.speakerColor = .orange
+deviceIcon.homeColor = .blue
 ```
 
 Take a look at the Example application for a working implementation.

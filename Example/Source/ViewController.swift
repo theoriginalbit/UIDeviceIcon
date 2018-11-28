@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         }
     }
     
-    private func applyDeviceIcon(_ deviceIcon: CAShapeLayer) {
+    private func applyDeviceIcon(_ deviceIcon: CADeviceLayer) {
+        deviceIcon.bezelColor = .white
+        deviceIcon.screenColor = .red
+        deviceIcon.cameraColor = .green
+        deviceIcon.speakerColor = .orange
+        deviceIcon.homeColor = .blue
+        
         let dontChange: CGFloat = 1.0
         let scale: CGFloat = 4.0
         

@@ -11,7 +11,7 @@ import UIDeviceModel
 
 public enum UIDeviceIcon {
     
-    case deviceIcon(CAShapeLayer)
+    case deviceIcon(CADeviceLayer)
     
     case unknown(String)
     
@@ -72,10 +72,7 @@ extension UIDeviceIcon {
             return .unknown(device)
         }
         
-        let layer = CAShapeLayer()
-        layer.path = device.path.cgPath
-        layer.fillColor = UIColor.black.cgColor
-        return .deviceIcon(layer)
+        return .deviceIcon(CADeviceLayer(device, withColor: .black))
     }
     
     static private var iPad: Device = iPadDevice()
