@@ -9,9 +9,7 @@
 import UIKit
 
 public extension UIDevice {
-    
-    public var deviceIcon: UIDeviceIcon {
+    var deviceIcon: UIDeviceIcon {
         return UIDeviceIcon.current
     }
-    
 }

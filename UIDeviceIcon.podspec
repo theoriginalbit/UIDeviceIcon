@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'UIDeviceIcon'
-  s.version                 = '1.2.0'
+  s.version                 = '2.0.0'
   s.summary                 = 'A µframework to provide an icon to represent the device model.'
   s.description             = <<-DESC
                                 A µframework to detect and provide an icon to represent the device model through an extension of UIDevice. Also detects the simulator and the device model it is simulating.
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = '8.0'
 
   s.source_files            = 'UIDeviceIcon/Classes/**/*'
-  s.swift_version           = '4.2'
+  s.swift_version           = '5.0'
   
-  s.dependency              'UIDeviceModel', '~> 1.1'
+  s.dependency              'UIDeviceModel', '~> 2.0'
 end

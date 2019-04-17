@@ -1,5 +1,5 @@
 # UIDeviceIcon
-[![Language](https://img.shields.io/badge/swift-4.2-orange.svg)](https://swift.org/)
+[![Language](https://img.shields.io/badge/swift-5.0-orange.svg)](https://swift.org/)
 [![License](https://img.shields.io/github/license/theoriginalbit/UIDeviceIcon.svg)](LICENSE)
 [![Pod Version](https://img.shields.io/cocoapods/v/UIDeviceIcon.svg)](https://cocoapods.org/pods/UIDeviceIcon)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
@@ -11,7 +11,7 @@ A µframework to detect and provide an icon to represent the device model throug
 ### CocoaPods
 
 ```ruby
-pod 'UIDeviceIcon', '~> 1.0'
+pod 'UIDeviceIcon', '~> 2.0'
 ```
 
 ### Carthage

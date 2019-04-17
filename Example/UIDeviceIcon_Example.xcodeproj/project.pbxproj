@@ -89,12 +89,12 @@
 		233B35E521851B330086FB21 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				233B35F221851B330086FB21 /* Info.plist */,
 				233B35E621851B330086FB21 /* AppDelegate.swift */,
 				233B35E821851B330086FB21 /* ViewController.swift */,
-				233B35EA21851B330086FB21 /* Main.storyboard */,
 				233B35ED21851B330086FB21 /* Assets.xcassets */,
 				233B35EF21851B330086FB21 /* LaunchScreen.storyboard */,
-				233B35F221851B330086FB21 /* Info.plist */,
+				233B35EA21851B330086FB21 /* Main.storyboard */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-UIDeviceIcon_Example/Pods-UIDeviceIcon_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-UIDeviceIcon_Example/Pods-UIDeviceIcon_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceIcon/UIDeviceIcon.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDeviceModel/UIDeviceModel.framework",
 			);
@@ -249,7 +249,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UIDeviceIcon_Example/Pods-UIDeviceIcon_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIDeviceIcon_Example/Pods-UIDeviceIcon_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CA1F56DE8B83C09174BCE3C1 /* [CP] Check Pods Manifest.lock */ = {
@@ -475,7 +475,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theoriginalbit.UIDeviceIcon-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -493,7 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theoriginalbit.UIDeviceIcon-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -513,7 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theoriginalbit.UIDeviceIcon-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIDeviceIcon_Example.app/UIDeviceIcon_Example";
 			};
@@ -534,7 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theoriginalbit.UIDeviceIcon-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIDeviceIcon_Example.app/UIDeviceIcon_Example";
 			};
