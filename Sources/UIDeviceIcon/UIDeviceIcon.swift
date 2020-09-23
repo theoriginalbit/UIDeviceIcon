@@ -19,7 +19,7 @@ public enum UIDeviceIcon {
 }
 
 extension UIDeviceIcon {
-
+    
     static var current: UIDeviceIcon {
         return mapFromModel(model: UIDevice.current.deviceModel)
     }
@@ -29,19 +29,17 @@ extension UIDeviceIcon {
         let device: Device
         
         switch actualModel {
-        case .iPad:
-            device = iPad
-        case .iPad2, .iPad3, .iPad4, .iPad5, .iPad6:
+        case .iPad2, .iPadGen3, .iPadGen4, .iPadGen5, .iPadGen6:
             device = iPad2
-        case .iPadAir, .iPadAir2, .iPadPro9Inch:
+        case .iPadAir, .iPadAir2, .iPadPro9_7Inch:
             device = iPadAir
-        case .iPadPro10Inch:
+        case .iPadPro10_5Inch:
             device = iPadPro10Inch
         case .iPadPro11Inch:
             device = iPadPro11Inch
-        case .iPadPro12Inch, .iPadPro12Inch2:
+        case .iPadPro12_9Inch, .iPadPro12_9InchGen2:
             device = iPadPro12Inch
-        case .iPadPro12Inch3:
+        case .iPadPro12_9InchGen3:
             device = iPadPro12Inch3
         case .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4:
             device = iPadMini
@@ -59,23 +57,35 @@ extension UIDeviceIcon {
             device = iPhoneXSMax
         case .iPhoneXR:
             device = iPhoneXR
-        case .iPodTouch, .iPodTouch2, .iPodTouch3, .iPodTouch4, .iPodTouch5, .iPodTouch6:
+        case .iPodTouch5, .iPodTouch6, .iPodTouch7:
             device = iPodTouch
-        
-        // all cases we don't have icons
             
-        case .iPhone, .iPhone3G, .iPhone3GS, .iPhone4, .iPhone4s, .iPhone5, .iPhone5c:
+        // all cases we don't have icons
+        
+        case .iPhone4s, .iPhone5, .iPhone5c:
             return .unsupported(model)
         case .simulator(_):
             fatalError("🤥") // we just unwrapped it!
         case .unknown(let device):
             return .unknown(device)
+        case .iPadGen7,
+             .iPadGen8,
+             .iPadAirGen3,
+             .iPadAirGen4,
+             .iPadPro11InchGen2,
+             .iPadPro12_9InchGen4,
+             .iPadMiniGen5,
+             .iPhone11,
+             .iPhone11Pro,
+             .iPhone11ProMax,
+             .iPhoneSEGen2:
+            #warning("TODO")
+            return .unsupported(model)
         }
         
         return .deviceIcon(CADeviceLayer(device, withColor: .black))
     }
     
-    static private var iPad: Device = iPadDevice()
     static private var iPad2: Device = iPad2Device()
     static private var iPadAir: Device = iPadAirDevice()
     static private var iPadPro10Inch: Device = iPadPro10InchDevice()

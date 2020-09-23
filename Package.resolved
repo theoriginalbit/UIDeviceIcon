@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UIDeviceModel",
+        "repositoryURL": "https://github.com/theoriginalbit/UIDeviceModel.git",
+        "state": {
+          "branch": null,
+          "revision": "29c153d665263034e7907674aaefc72581d2ce65",
+          "version": "3.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

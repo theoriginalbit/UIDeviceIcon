@@ -1,23 +1,13 @@
 # UIDeviceIcon
-[![Language](https://img.shields.io/badge/swift-5.0-orange.svg)](https://swift.org/)
-[![License](https://img.shields.io/github/license/theoriginalbit/UIDeviceIcon.svg)](LICENSE)
-[![Pod Version](https://img.shields.io/cocoapods/v/UIDeviceIcon.svg)](https://cocoapods.org/pods/UIDeviceIcon)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
 A µframework to detect and provide an icon to represent the device model through an extension of UIDevice. Also detects the simulator and the device model it is simulating.
 
 ## Installation
 
-### CocoaPods
+### Swift Package Manager
 
-```ruby
-pod 'UIDeviceIcon', '~> 2.0'
-```
-
-### Carthage
-
-```ogdl
-github "theoriginalbit/UIDeviceIcon"
+```swift
+.package(url: "https://github.com/theoriginalbit/UIDeviceIcon.git", .upToNextMajor(from: "3.0.0"))
 ```
 
 ## Usage
